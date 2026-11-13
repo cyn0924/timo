@@ -17,7 +17,7 @@ export default function Hero({ onBrowse, onPost }) {
         <div className="hero-image-frame image-empty">
           <img
             className="hero-character"
-            src="/images/header_image.png"
+            src={`${import.meta.env.BASE_URL}images/header_image.png`}
             alt="TIMO 메인 비주얼"
             onLoad={markImageLoaded}
             onError={markImageMissing}

@@ -44,7 +44,10 @@ export default function Login() {
         <div className="login-decoration" aria-hidden="true" />
         <section className="login-card">
           <a className="login-logo" href="/" aria-label="TIMO 홈">
-            <img src="/images/logo.png" alt="TIMO" />
+            <img
+              src={`${import.meta.env.BASE_URL}images/logo.png`}
+              alt="TIMO"
+            />
           </a>
           <p className="login-eyebrow">WELCOME BACK TO TIMO</p>
           <h1>다시 만나서 반가워요!</h1>

@@ -6,7 +6,10 @@ export default function Footer() {
       {/* 브랜드 영역 */}
       <div className="footer-brand">
         <a className="brand" href="/">
-          <img src="/images/logo.png" alt="TIMO" />
+          <img
+              src={`${import.meta.env.BASE_URL}images/logo_white.png`}
+              alt="TIMO"
+          />
         </a>
 
         <p>

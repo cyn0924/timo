@@ -36,7 +36,10 @@ export default function Header({ onPost }) {
   return (
     <header className="site-header">
       <a className="brand" href="/" aria-label="TIMO 홈">
-        <img src="/images/logo.png" alt="TIMO" />
+        <img
+          src={`${import.meta.env.BASE_URL}images/logo.png`}
+          alt="TIMO"
+        />
       </a>
 
       <nav className="main-nav" aria-label="주 메뉴">
