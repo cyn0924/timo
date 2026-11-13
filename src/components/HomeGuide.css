@@ -1,0 +1,30 @@
+.home-guide{padding:20px 0 70px;background:#f8faff}
+.home-guide-inner{width:min(1280px,100%);margin:0 auto;padding:0 5.4%}
+.home-guide-heading{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:23px}
+.home-guide-kicker{margin:0 0 7px;color:#315ceb;font:700 11px/1.3 'Barlow Condensed',Pretendard,sans-serif;letter-spacing:1.65px}
+.home-guide-heading h2{margin:0;color:#17233f;font-size:26px;line-height:1.3;font-weight:750;letter-spacing:-.45px}
+.home-guide-intro{margin:7px 0 0;color:#667085;font-size:14px;line-height:1.55}
+.home-guide-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.home-guide-step{position:relative;min-width:0;min-height:168px;padding:19px 21px;border:1px solid #e3e9f3;border-radius:16px;background:#fff;box-shadow:0 4px 13px rgba(23,35,63,.035);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.home-guide-step:hover,.home-guide-type:hover{transform:translateY(-3px);border-color:#d5e0ff;box-shadow:0 9px 20px rgba(23,35,63,.075)}
+.home-guide-step-head{display:flex;align-items:center;justify-content:space-between;color:#315ceb}
+.home-guide-step-head>span{font:700 12px 'Barlow Condensed',sans-serif;letter-spacing:1px}
+.home-guide-step-head svg{width:39px;height:39px;padding:9px;border-radius:12px;background:#eff3ff}
+.home-guide-step h3{margin:12px 0 6px;color:#17233f;font-size:18px;line-height:1.4;font-weight:700}
+.home-guide-step>p{margin:0;color:#667085;font-size:13px;line-height:1.7;overflow-wrap:anywhere}
+.home-guide-arrow{position:absolute;z-index:1;right:-23px;top:50%;width:30px;height:30px;display:grid;place-items:center;border:1px solid #e3e9f3;border-radius:50%;background:#fff;color:#8190ae;transform:translateY(-50%)}
+.home-guide-types-heading{margin:34px 0 13px}
+.home-guide-types-heading h3{margin:0;color:#17233f;font-size:18px;line-height:1.4;font-weight:700;letter-spacing:-.25px}
+.home-guide-types{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.home-guide-type{min-width:0;min-height:94px;padding:16px;display:flex;align-items:flex-start;gap:12px;border:1px solid #e7ebf3;border-radius:14px;background:#fff;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.home-guide-type-icon{width:39px;height:39px;flex:none;display:grid;place-items:center;border-radius:12px;background:#edf2ff;color:#315ceb}
+.home-guide-type.exchange .home-guide-type-icon{background:#f2edff;color:#8155eb}
+.home-guide-type.split .home-guide-type-icon{background:#fff1e7;color:#ef8a32}
+.home-guide-type>div{min-width:0}
+.home-guide-type>div>p{margin:0 0 2px;color:#8a95aa;font:700 10px/1.4 'Barlow Condensed',Pretendard,sans-serif;letter-spacing:.9px}
+.home-guide-type h4{margin:0;color:#17233f;font-size:15px;line-height:1.4;font-weight:700}
+.home-guide-type>div>span{display:block;margin-top:4px;color:#667085;font-size:12px;line-height:1.55;overflow-wrap:anywhere}
+.home-guide-link{width:max-content;min-height:43px;margin:23px auto 0;padding:0 17px;display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid #315ceb;border-radius:10px;background:#315ceb;color:#fff;font-size:14px;font-weight:650;transition:background .18s ease,transform .18s ease,box-shadow .18s ease}
+.home-guide-link:hover{background:#244bd2;transform:translateY(-1px);box-shadow:0 5px 12px rgba(49,92,235,.2)}
+@media(max-width:900px){.home-guide{padding-top:12px;padding-bottom:58px}.home-guide-inner{padding-inline:4%}.home-guide-steps,.home-guide-types{gap:12px}.home-guide-step{padding:17px 16px;min-height:174px}.home-guide-arrow{right:-21px}.home-guide-type{padding:13px;gap:9px}.home-guide-type-icon{width:35px;height:35px}}
+@media(max-width:650px){.home-guide{padding:8px 0 44px}.home-guide-inner{padding-inline:5%}.home-guide-heading{margin-bottom:17px}.home-guide-heading h2{font-size:22px}.home-guide-intro{font-size:13px}.home-guide-steps{grid-template-columns:minmax(0,1fr);gap:10px}.home-guide-step{min-height:0;padding:15px 17px}.home-guide-step-head svg{width:36px;height:36px}.home-guide-step h3{margin:8px 0 4px}.home-guide-step>p br{display:none}.home-guide-arrow{display:none}.home-guide-types-heading{margin:25px 0 11px}.home-guide-types-heading h3{font-size:17px}.home-guide-types{grid-template-columns:minmax(0,1fr);gap:9px}.home-guide-type{min-height:0;padding:12px}.home-guide-link{width:100%;min-height:47px;margin-top:19px}}

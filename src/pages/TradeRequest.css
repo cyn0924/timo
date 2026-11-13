@@ -1,0 +1,1258 @@
+
+.request-page {
+  min-height: 100vh;
+  background: #e5ebf8;
+  color: #17233f;
+  display: flex;
+  flex-direction: column;
+}
+
+.request-page .detail-breadcrumb-band {
+  height: 90px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(105deg, #eaf0fc 0%, #dce5fb 31%, #315ceb 72%, #1e3fbd 100%);
+}
+
+.request-page .detail-breadcrumb-pattern {
+  position: absolute;
+  inset: -60%;
+  opacity: .35;
+  background: repeating-linear-gradient(135deg, transparent 0 42px, rgba(255,255,255,.8) 44px 52px, transparent 54px 95px), repeating-linear-gradient(45deg, transparent 0 74px, rgba(23,35,63,.15) 77px 83px, transparent 86px 130px);
+  transform: skewX(-12deg);
+}
+
+.request-page .detail-breadcrumb {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  max-width: 1120px;
+  width: calc(100% - 48px);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #65728b;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.request-page .detail-breadcrumb a {
+  color: inherit;
+}
+
+.request-page .detail-breadcrumb a:hover {
+  color: #315ceb;
+}
+
+.request-page .detail-breadcrumb > svg:first-child {
+  color: #66758e;
+}
+
+.request-main {
+  width: min(880px, calc(100% - 40px));
+  margin: 30px auto 120px;
+  flex: 1;
+}
+
+.request-steps {
+  height: 68px;
+  list-style: none;
+  margin: 0 0 32px;
+  padding: 0 36px;
+  background: #fff;
+  border-radius: 17px;
+  box-shadow: 0 3px 14px rgba(28,46,88,.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.request-steps li {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: #a1aabd;
+  font-weight: 750;
+  font-size: 15px;
+}
+
+.request-steps li i {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #b6becc;
+  color: #fff;
+  font-style: normal;
+  font-size: 12px;
+}
+
+.request-steps li.current {
+  color: #315ceb;
+}
+
+.request-steps li.current i {
+  background: #315ceb;
+}
+
+.request-steps > b {
+  color: #758198;
+  display: grid;
+  place-items: center;
+}
+
+.request-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 578px) minmax(0, 280px);
+  gap: 18px;
+  align-items: start;
+}
+
+.request-left-column,
+.request-right-column {
+  display: grid;
+  gap: 18px;
+  min-width: 0;
+  align-content: start;
+}
+
+.request-card {
+  background: #fff;
+  border: 1px solid rgba(226,230,239,.65);
+  border-radius: 17px;
+  box-shadow: 0 3px 12px rgba(27,45,83,.045);
+}
+
+.request-card h1,
+.request-card h2 {
+  margin: 0;
+  color: #17233f;
+  font-weight: 850;
+  letter-spacing: -.045em;
+}
+
+.request-card h1,
+.request-card h2,
+.request-missing h1,
+.request-confirm-modal h2,
+.request-success-modal h2 {
+  font-family: 'Barlow Condensed', Pretendard, sans-serif;
+}
+
+.request-card h1 {
+  font-size: 29px;
+}
+
+.request-card h2 {
+  font-size: 25px;
+}
+
+/* 티켓 정보 카드 */
+.ticket-summary-card {
+  padding: 24px 26px 14px;
+}
+
+.ticket-summary-card h1 {
+  margin-bottom: 18px;
+}
+
+.request-ticket-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.request-ticket-thumb {
+  width: 120px;
+  height: 93px;
+  flex: none;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #193d9c, #3c7dff 48%, #10215c);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 900;
+  font-size: 15px;
+  text-align: center;
+  line-height: 1.1;
+  letter-spacing: .04em;
+}
+
+.request-ticket-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.request-ticket-thumb.thumb-logo {
+  background: linear-gradient(135deg, #17233f, #315ceb);
+}
+
+.request-ticket-thumb.thumb-crowd {
+  background: linear-gradient(135deg, #111d47, #2874cb 60%, #17233f);
+}
+
+.request-ticket-copy {
+  min-width: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.request-ticket-tags {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.request-type-tag,
+.request-status-tag {
+  width: max-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 850;
+  white-space: nowrap;
+}
+
+.request-type-tag.type-양도 {
+  background: #dce5ff;
+  color: #315ceb;
+}
+
+.request-type-tag.type-교환 {
+  background: #eee4ff;
+  color: #8450ef;
+}
+
+.request-type-tag.type-분철 {
+  background: #ffead9;
+  color: #f17b28;
+}
+
+.request-status-tag.active {
+  background: #d8eee7;
+  color: #388b70;
+}
+
+.request-status-tag.inactive {
+  background: #e7e9ed;
+  color: #737e91;
+}
+
+.request-ticket-copy h2 {
+  font-size: 20px;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.request-ticket-meta {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #7b879b;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.request-ticket-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.request-ticket-meta i {
+  width: 1px;
+  height: 13px;
+  background: #d4dae5;
+}
+
+.request-seller-line {
+  min-height: 45px;
+  margin-top: 13px;
+  padding-top: 11px;
+  border-top: 1px solid #edf0f5;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  color: #6d7890;
+  font-size: 11px;
+}
+
+.request-seller-line span {
+  white-space: nowrap;
+}
+
+.request-seller-line b {
+  color: #26344e;
+  margin-left: 4px;
+}
+
+.request-seller-line a {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #315ceb;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+/* 신청 내용 입력 카드 */
+.request-content-card {
+  padding: 23px 26px 20px;
+}
+
+.request-content-card > h2 {
+  margin-bottom: 20px;
+}
+
+.request-field {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 18px;
+  color: #263650;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.request-field > span b {
+  color: #8450ef;
+}
+
+.request-field select,
+.request-field textarea {
+  width: 100%;
+  border: 1px solid #dfe5f0;
+  border-radius: 10px;
+  background: #f7f9fd;
+  color: #273650;
+  font: 600 14px Pretendard, sans-serif;
+  outline: 0;
+}
+
+.request-field select {
+  height: 43px;
+  padding: 0 13px;
+}
+
+.request-field textarea {
+  height: 130px;
+  resize: vertical;
+  padding: 13px;
+  line-height: 1.65;
+  background: white;
+}
+
+.request-field select:focus,
+.request-field textarea:focus {
+  border-color: #7694ff;
+  box-shadow: 0 0 0 3px rgba(49,92,235,.09);
+}
+
+.message-field {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.message-field textarea {
+  padding-bottom: 30px;
+}
+
+.message-count {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  color: #8490a5;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.request-field.error textarea {
+  border-color: #dc5968;
+}
+
+.request-error {
+  display: block;
+  color: #cf4351;
+  font-size: 12px;
+  font-weight: 650;
+  margin-top: 2px;
+}
+
+.privacy-note {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 10px 0 0;
+  color: #7b879b;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.privacy-note svg {
+  color: #6281ed;
+  flex: none;
+}
+
+.request-existing-note {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 12px;
+  margin: 12px 0 0;
+  background: #e7f5ef;
+  color: #388b70;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+/* 신청 확인 카드 */
+.confirmation-card {
+  padding: 20px 24px;
+}
+
+.confirmation-card h2 {
+  font-size: 20px;
+  margin-bottom: 14px;
+}
+
+.confirmation-card label {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 10px 0;
+  color: #33415c;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.confirmation-card label input {
+  width: 17px;
+  height: 17px;
+  flex: none;
+  margin: 1px 0 0;
+  accent-color: #315ceb;
+}
+
+.confirmation-card label.error {
+  color: #ce4756;
+}
+
+.confirmation-card > p {
+  margin: 8px 0 0 26px;
+  color: #7c879a;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.confirmation-hint {
+  display: block;
+  margin: 9px 0 0 26px;
+  color: #315ceb;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.request-save-error {
+  margin: 0;
+  color: #cf4351;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* 신청 요약 및 결제 카드 */
+.request-order-card {
+  padding: 23px 21px 19px;
+}
+
+.request-order-card > h2 {
+  margin-bottom: 16px;
+}
+
+.request-order-card > .request-type-tag {
+  margin-bottom: 10px;
+}
+
+.request-order-card dl {
+  margin: 0;
+  display: grid;
+  gap: 11px;
+}
+
+.request-order-card dl > div,
+.request-total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.request-order-card dt,
+.request-total > span {
+  color: #78849a;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.request-order-card dd {
+  margin: 0;
+  text-align: right;
+  color: #26344e;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.request-total {
+  border-top: 1px solid #e9edf4;
+  margin-top: 15px;
+  padding-top: 13px;
+  align-items: center;
+}
+
+.request-total > div {
+  color: #315ceb;
+  font-size: 20px;
+}
+
+.request-total strong {
+  font: 850 20px Pretendard, sans-serif;
+  white-space: nowrap;
+}
+
+.payment-disclaimer {
+  margin: 12px 0;
+  padding: 10px;
+  background: #f1f4fa;
+  border-radius: 8px;
+  color: #7b879b;
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.send-request-button {
+  width: 100%;
+  height: 43px;
+  border: 0;
+  border-radius: 9px;
+  background: #315ceb;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font: 800 15px Pretendard, sans-serif;
+  transition: .15s;
+}
+
+.send-request-button:hover:not(:disabled) {
+  background: #234bd2;
+  transform: translateY(-1px);
+}
+
+.send-request-button:disabled {
+  background: #aab7da;
+  cursor: not-allowed;
+}
+
+.detail-back-link {
+  display: block;
+  text-align: right;
+  margin: 10px 0 0;
+  color: #69758d;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.request-delivery-note {
+  display: block;
+  margin-top: 12px;
+  text-align: center;
+  color: #8290a5;
+  font-size: 10px;
+}
+
+.unavailable-note {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+/* 신청 안내 카드 */
+.request-guide-card {
+  padding: 20px 19px;
+}
+
+.request-guide-card h2 {
+  font-size: 19px;
+  margin-bottom: 16px;
+}
+
+.request-guide-card ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.request-guide-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.request-guide-card li > i {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #e8eeff;
+  color: #315ceb;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 850;
+}
+
+.request-guide-card li > div {
+  display: grid;
+  gap: 4px;
+}
+
+.request-guide-card li b {
+  font-size: 12px;
+  color: #2c3a54;
+}
+
+.request-guide-card li small {
+  font-size: 10px;
+  line-height: 1.5;
+  color: #7b879b;
+}
+
+.request-help-link {
+  height: 46px;
+  padding: 0 15px;
+  border-radius: 10px;
+  background: #c5cbda;
+  color: #26344e;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.request-help-link b {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: #315ceb;
+}
+
+/* 신청 확인 및 완료 모달 */
+.request-modal-overlay {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  padding: 20px;
+  background: rgba(20,32,59,.48);
+  backdrop-filter: blur(4px);
+  display: grid;
+  place-items: center;
+}
+
+.request-confirm-modal,
+.request-success-modal {
+  position: relative;
+  width: min(470px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+  padding: 31px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 24px 80px rgba(20,32,59,.25);
+}
+
+.request-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #f0f3f8;
+  color: #65728b;
+}
+
+.request-modal-eyebrow {
+  margin: 0 0 7px;
+  color: #315ceb;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.6px;
+}
+
+.request-confirm-modal h2,
+.request-success-modal h2 {
+  margin: 0 35px 18px 0;
+  font-size: 29px;
+  letter-spacing: -.035em;
+}
+
+.confirm-post-title {
+  display: block;
+  padding: 12px 13px;
+  border-radius: 9px;
+  background: #f2f5fb;
+  color: #273650;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.request-confirm-modal dl {
+  display: grid;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.request-confirm-modal dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 13px;
+}
+
+.request-confirm-modal dt {
+  color: #7c879b;
+}
+
+.request-confirm-modal dd {
+  margin: 0;
+  color: #26344e;
+  font-weight: 800;
+  text-align: right;
+}
+
+.request-confirm-modal dd strong {
+  color: #315ceb;
+}
+
+.confirm-message {
+  padding: 12px;
+  border: 1px solid #e5e9f1;
+  border-radius: 10px;
+}
+
+.confirm-message span {
+  font-size: 11px;
+  color: #7a869a;
+  font-weight: 750;
+}
+
+.confirm-message p {
+  margin: 7px 0 0;
+  color: #394760;
+  font-size: 12px;
+  line-height: 1.65;
+  white-space: pre-line;
+}
+
+.request-modal-actions {
+  display: flex;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.request-modal-actions button {
+  height: 43px;
+  flex: 1;
+  border: 0;
+  border-radius: 10px;
+  background: #eef1f6;
+  color: #657188;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.request-modal-actions button:last-child {
+  background: #315ceb;
+  color: #fff;
+}
+
+/* 신청 완료 모달 */
+.request-success-modal {
+  text-align: center;
+  padding: 35px 30px;
+}
+
+.success-check {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #e1f4eb;
+  color: #328b69;
+}
+
+.request-success-modal h2 {
+  margin: 0 0 10px;
+  font-size: 30px;
+}
+
+.request-success-modal > p {
+  margin: 0 auto 14px;
+  max-width: 340px;
+  color: #758198;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.request-success-modal > b {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 20px;
+  background: #e3eaff;
+  color: #315ceb;
+  font-size: 12px;
+}
+
+.request-success-modal > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.request-success-modal > div a {
+  padding: 11px 8px;
+  border-radius: 9px;
+  background: #315ceb;
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.request-success-modal > div a + a {
+  background: #eef1f6;
+  color: #596780;
+}
+
+/* 요청할 게시글이 없는 경우 */
+.request-missing {
+  flex: 1;
+  min-height: 55vh;
+  display: grid;
+  place-items: center;
+  padding: 30px;
+}
+
+.request-missing section {
+  text-align: center;
+  padding: 42px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(23,35,63,.08);
+}
+
+.request-missing h1 {
+  margin: 0 0 10px;
+  font-size: 34px;
+}
+
+.request-missing p {
+  color: #748198;
+  font-size: 14px;
+}
+
+.request-missing a {
+  display: inline-flex;
+  margin-top: 12px;
+  padding: 11px 17px;
+  border-radius: 10px;
+  background: #315ceb;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* 태블릿 및 모바일 반응형 */
+@media (max-width: 760px) {
+  .request-page .detail-breadcrumb-band {
+    height: 67px;
+  }
+
+  .request-page .detail-breadcrumb {
+    width: calc(100% - 30px);
+    gap: 5px;
+    font-size: 11px;
+  }
+
+  .request-main {
+    width: calc(100% - 28px);
+    margin: 20px auto 70px;
+  }
+
+  .request-steps {
+    height: 59px;
+    padding: 0 12px;
+    margin-bottom: 18px;
+    border-radius: 13px;
+  }
+
+  .request-steps li {
+    gap: 6px;
+    font-size: 11px;
+  }
+
+  .request-steps li i {
+    width: 22px;
+    height: 22px;
+    font-size: 10px;
+  }
+
+  .request-steps > b svg {
+    width: 17px;
+  }
+
+  .request-columns {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .request-left-column,
+  .request-right-column {
+    gap: 13px;
+  }
+
+  .request-card {
+    border-radius: 14px;
+  }
+
+  .ticket-summary-card {
+    padding: 18px 16px 11px;
+  }
+
+  .ticket-summary-card h1 {
+    font-size: 25px;
+    margin-bottom: 13px;
+  }
+
+  .request-ticket-row {
+    gap: 11px;
+  }
+
+  .request-ticket-thumb {
+    width: 92px;
+    height: 76px;
+    border-radius: 9px;
+  }
+
+  .request-ticket-copy h2 {
+    font-size: 16px;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .request-ticket-tags {
+    gap: 5px;
+  }
+
+  .request-type-tag,
+  .request-status-tag {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+
+  .request-ticket-meta {
+    font-size: 11px;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .request-seller-line {
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 10px;
+  }
+
+  .request-seller-line a {
+    margin-left: auto;
+  }
+
+  .request-content-card {
+    padding: 18px 16px;
+  }
+
+  .request-content-card > h2 {
+    font-size: 23px;
+    margin-bottom: 16px;
+  }
+
+  .request-field {
+    font-size: 13px;
+  }
+
+  .request-field textarea {
+    height: 126px;
+    font-size: 13px;
+  }
+
+  .confirmation-card {
+    padding: 17px 15px;
+  }
+
+  .confirmation-card h2 {
+    font-size: 19px;
+  }
+
+  .confirmation-card label {
+    font-size: 12px;
+  }
+
+  .request-order-card {
+    padding: 18px;
+  }
+
+  .request-order-card > h2 {
+    font-size: 23px;
+  }
+
+  .request-order-card dl {
+    gap: 10px;
+  }
+
+  .request-guide-card {
+    padding: 18px;
+  }
+
+  .request-guide-card h2 {
+    font-size: 19px;
+  }
+
+  .request-help-link {
+    height: 43px;
+  }
+
+  .request-success-modal > div {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 작은 모바일 화면 */
+@media (max-width: 400px) {
+  .request-page .detail-breadcrumb {
+    font-size: 10px;
+    gap: 3px;
+  }
+
+  .request-page .detail-breadcrumb svg {
+    width: 13px;
+  }
+
+  .request-steps {
+    padding-inline: 8px;
+  }
+
+  .request-steps li {
+    font-size: 10px;
+  }
+
+  .request-steps li i {
+    width: 20px;
+    height: 20px;
+  }
+
+  .request-steps > b svg {
+    width: 14px;
+  }
+
+  .request-ticket-thumb {
+    width: 78px;
+    height: 72px;
+  }
+
+  .request-ticket-meta span:last-child {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .request-seller-line {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .request-seller-line a {
+    margin: 0;
+  }
+}
+
+/* Request page uses the same body and caption scale as the rest of TIMO. */
+
+.request-card h1,
+.request-card h2 {
+  line-height: var(--leading-tight);
+}
+
+.request-card h1,
+.request-card h2 {
+  font-size: var(--font-2xl);
+}
+
+.request-steps li {
+  font-size: var(--font-sm);
+  font-weight: var(--weight-semibold);
+}
+
+.request-ticket-copy h2 {
+  font-size: var(--font-xl);
+  line-height: var(--leading-tight);
+}
+
+.request-ticket-meta,
+.request-seller-line {
+  font-size: var(--font-xs);
+  line-height: var(--leading-normal);
+  font-weight: var(--weight-regular);
+}
+
+.request-content-card > h2 {
+  font-size: var(--font-2xl);
+}
+
+.request-field {
+  font-size: var(--font-sm);
+  line-height: var(--leading-normal);
+}
+
+.request-field select,
+.request-field textarea {
+  font-size: 15px;
+  line-height: var(--leading-normal);
+  font-weight: var(--weight-regular);
+}
+
+.privacy-note,
+.confirmation-card > p,
+.confirmation-hint,
+.payment-disclaimer,
+.request-delivery-note {
+  font-size: var(--font-xs);
+  line-height: var(--leading-relaxed);
+}
+
+.confirmation-card h2,
+.request-guide-card h2 {
+  font-size: var(--font-lg);
+  line-height: var(--leading-tight);
+}
+
+.confirmation-card label {
+  font-size: var(--font-sm);
+  line-height: var(--leading-normal);
+  font-weight: var(--weight-medium);
+}
+
+.request-order-card dt,
+.request-total > span,
+.request-order-card dd {
+  font-size: var(--font-xs);
+  line-height: var(--leading-normal);
+}
+
+.request-guide-card li b {
+  font-size: var(--font-xs);
+}
+
+.request-guide-card li small,
+.request-help-link {
+  font-size: 11px;
+  line-height: var(--leading-relaxed);
+}
+
+.send-request-button,
+.request-modal-actions button {
+  font-size: var(--font-sm);
+  font-weight: var(--weight-semibold);
+}
+
+.request-missing p,
+.request-success-modal > p {
+  font-size: var(--font-sm);
+  line-height: var(--leading-relaxed);
+}
+
+/* 공통 타이포그래피의 모바일 설정 */
+@media (max-width: 760px) {
+  .request-steps li {
+    font-size: 11px;
+  }
+
+  .request-ticket-copy h2 {
+    font-size: var(--font-sm);
+  }
+
+  .request-ticket-meta,
+  .request-seller-line {
+    font-size: 11px;
+  }
+
+  .request-field,
+  .confirmation-card label {
+    font-size: 13px;
+  }
+
+  .request-field select,
+  .request-field textarea {
+    font-size: 14px;
+  }
+
+  .request-order-card dt,
+  .request-order-card dd,
+  .request-guide-card li b {
+    font-size: 12px;
+  }
+
+  .request-guide-card li small,
+  .request-help-link {
+    font-size: 11px;
+  }
+
+  .privacy-note,
+  .confirmation-card > p,
+  .confirmation-hint {
+    font-size: 11px;
+  }
+}
+
+@media(max-width:920px){
+  .request-main{width:min(680px,calc(100% - 40px))}
+  .request-columns{grid-template-columns:minmax(0,1fr)}
+  .request-right-column{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}
+  .request-order-card{grid-row:1 / span 2}
+  .request-help-link{grid-column:2}
+}
+@media(max-width:760px){
+  .request-main{width:calc(100% - 28px)}
+  .request-right-column{grid-template-columns:minmax(0,1fr)}
+  .request-order-card{grid-row:auto}
+  .request-help-link{grid-column:auto}
+}
