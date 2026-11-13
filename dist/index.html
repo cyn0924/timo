@@ -5,8 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f3f6fb" />
     <title>TIMO. | 티켓 거래를 모두 모아서</title>
-    <script type="module" crossorigin src="/timo/assets/index-BvKYt9a4.js"></script>
+    <script type="module" crossorigin src="/timo/assets/index-B5II7a8T.js"></script>
     <link rel="stylesheet" crossorigin href="/timo/assets/index-BXomNhlZ.css">
   </head>
-  <body><div id="root"></div></body>
+  <body>
+    <div id="root"></div>
+    <script>
+      (() => {
+        const base = '/timo/';
+        const params = new URLSearchParams(window.location.search);
+        const restoredPath = params.get('__spa_path');
+        if (restoredPath && restoredPath.startsWith('/') && !restoredPath.startsWith('//')) {
+          window.history.replaceState(null, '', `${base}${restoredPath.slice(1)}`);
+        }
+      })();
+    </script>
+  </body>
 </html>

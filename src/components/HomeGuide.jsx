@@ -9,6 +9,7 @@ import {
   UsersRound
 } from 'lucide-react';
 import './HomeGuide.css';
+import { appPath } from '../utils/paths.js';
 
 const steps = [
   { number: '01', title: '티켓 찾기', Icon: Search, lines: ['원하는 경기와 거래 유형을 선택해요.', '경기 날짜와 좌석 정보를 확인해요.'] },
@@ -55,7 +56,7 @@ export default function HomeGuide() {
           ))}
         </div>
 
-        <a className="home-guide-link" href="/guide">TIMO 이용 방법 자세히 보기 <ArrowRight size={18} /></a>
+        <a className="home-guide-link" href={appPath('/guide')}>TIMO 이용 방법 자세히 보기 <ArrowRight size={18} /></a>
       </div>
     </section>
   );

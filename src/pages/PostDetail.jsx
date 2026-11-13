@@ -27,6 +27,7 @@ import {
   getTradeRequest
 } from '../data/postStore.js';
 import { getPostDetails } from '../data/postDetails.js';
+import { appPath } from '../utils/paths.js';
 import './PostDetail.css';
 
 const weekdays = ['일', '월', '화', '수', '목', '금', '토'];
@@ -178,7 +179,7 @@ export default function PostDetail({ postId }) {
       <div className="detail-not-found">
         <Header
           onPost={() => {
-            window.location.href = '/post/new';
+            window.location.href = appPath('/post/new');
           }}
         />
 
@@ -189,7 +190,7 @@ export default function PostDetail({ postId }) {
               : '거래글을 찾을 수 없습니다.'}
           </h1>
 
-          <a href="/#market">거래 목록으로 이동</a>
+          <a href={appPath('/#market')}>거래 목록으로 이동</a>
         </main>
 
         <Footer />
@@ -236,7 +237,7 @@ export default function PostDetail({ postId }) {
       }
     }
 
-    window.location.assign(`/?date=${post.date}#market`);
+    window.location.assign(appPath(`/?date=${post.date}#market`));
   };
 
   const openDateListings = event => {
@@ -249,7 +250,7 @@ export default function PostDetail({ postId }) {
       // The date-filtered route works without session storage.
     }
 
-    window.location.assign(`/?date=${post.date}#market`);
+    window.location.assign(appPath(`/?date=${post.date}#market`));
   };
 
   const sharePost = async () => {
@@ -277,7 +278,7 @@ export default function PostDetail({ postId }) {
     <div className="post-detail-page">
       <Header
         onPost={() => {
-          window.location.href = '/post/new';
+          window.location.href = appPath('/post/new');
         }}
       />
 
@@ -287,11 +288,11 @@ export default function PostDetail({ postId }) {
         <nav className="detail-breadcrumb" aria-label="현재 위치">
           <House size={19} />
 
-          <a href="/">홈</a>
+          <a href={appPath('/')}>홈</a>
           <ChevronRight size={16} />
 
           <a
-            href={`/?date=${post.date}#market`}
+            href={appPath(`/?date=${post.date}#market`)}
             onClick={openDateListings}
           >
             티켓 거래
@@ -544,7 +545,7 @@ export default function PostDetail({ postId }) {
               </div>
             </div>
 
-            <a className="seller-card" href="/mypage">
+            <a className="seller-card" href={appPath('/mypage')}>
               <span className="seller-avatar" />
 
               <span className="seller-card-info">
@@ -576,14 +577,14 @@ export default function PostDetail({ postId }) {
               ) : (
                 <a
                   className="request-button"
-                  href={`/post/${post.id}/request`}
+                  href={appPath(`/post/${post.id}/request`)}
                 >
                   거래 요청
                 </a>
               )}
             </div>
 
-            <a className="first-trade-guide" href="/#guide">
+            <a className="first-trade-guide" href={appPath('/#guide')}>
               <span>거래가 처음인가요?</span>
 
               <strong>
@@ -604,7 +605,7 @@ export default function PostDetail({ postId }) {
                 <div className="same-day-list">
                   {sameDay.map(item => (
                     <a
-                      href={`/post/${item.id}`}
+                      href={appPath(`/post/${item.id}`)}
                       className="same-day-item"
                       key={item.id}
                     >
@@ -629,7 +630,7 @@ export default function PostDetail({ postId }) {
 
               <a
                 className="same-day-all"
-                href={`/?date=${post.date}#market`}
+                href={appPath(`/?date=${post.date}#market`)}
                 onClick={openDateListings}
               >
                 전체 거래글 보기

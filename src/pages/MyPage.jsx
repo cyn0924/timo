@@ -17,6 +17,7 @@ import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 import MyPageSidebar from '../components/MyPageSidebar.jsx';
 import { useAuth } from '../context/AuthContext.jsx';
+import { appPath } from '../utils/paths.js';
 
 import { profileSeed } from '../data/myPage.js';
 import {
@@ -350,7 +351,7 @@ export default function MyPage() {
   const handleLogout = () => {
     if (window.confirm('로그아웃 하시겠어요?')) {
       logout();
-      window.location.href = '/login';
+      window.location.href = appPath('/login');
     }
   };
 
@@ -398,7 +399,7 @@ export default function MyPage() {
     <div className="mypage-shell" id="top">
       <Header
         onPost={() => {
-          window.location.href = '/post/new';
+          window.location.href = appPath('/post/new');
         }}
       />
 
@@ -414,7 +415,7 @@ export default function MyPage() {
             aria-label="현재 위치"
           >
             <House size={19} />
-            <a href="/">홈</a>
+            <a href={appPath('/')}>홈</a>
             <ChevronRight size={17} />
             <span>마이페이지</span>
           </nav>

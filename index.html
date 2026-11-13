@@ -6,5 +6,18 @@
     <meta name="theme-color" content="#f3f6fb" />
     <title>TIMO. | 티켓 거래를 모두 모아서</title>
   </head>
-  <body><div id="root"></div><script type="module" src="/src/main.jsx"></script></body>
+  <body>
+    <div id="root"></div>
+    <script>
+      (() => {
+        const base = '/timo/';
+        const params = new URLSearchParams(window.location.search);
+        const restoredPath = params.get('__spa_path');
+        if (restoredPath && restoredPath.startsWith('/') && !restoredPath.startsWith('//')) {
+          window.history.replaceState(null, '', `${base}${restoredPath.slice(1)}`);
+        }
+      })();
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

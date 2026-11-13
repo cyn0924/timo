@@ -18,6 +18,7 @@ import {
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 import './Guide.css';
+import { appPath } from '../utils/paths.js';
 
 const howSteps = [
   {
@@ -170,7 +171,7 @@ export default function Guide() {
 
         <section className="guide-cta">
           <div><p className="guide-eyebrow">SEE YOU AT THE MATCH</p><h2>좋아하는 경기를 더 편하게, TIMO와 함께!</h2><p>티켓 거래부터 경기별 분철까지,<br />e스포츠 팬들을 위한 티켓 거래 모음 TIMO입니다.</p></div>
-          <a href="/#market">거래 게시글 둘러보기 <ArrowRight size={19} /></a>
+          <a href={appPath('/#market')}>거래 게시글 둘러보기 <ArrowRight size={19} /></a>
         </section>
       </main>
       <Footer />

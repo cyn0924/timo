@@ -1,3 +1,4 @@
+import { appPath } from '../utils/paths.js';
 
 export default function Footer() {
   return (
@@ -5,7 +6,7 @@ export default function Footer() {
 
       {/* 브랜드 영역 */}
       <div className="footer-brand">
-        <a className="brand" href="/">
+        <a className="brand" href={appPath('/')}>
           <img
               src={`${import.meta.env.BASE_URL}images/logo_white.png`}
               alt="TIMO"
@@ -21,10 +22,10 @@ export default function Footer() {
 
       {/* 푸터 메뉴 */}
       <nav className="footer-links" id="guide">
-        <a href="/guide">이용안내</a>
-        <a href="/#guide">거래 주의사항</a>
-        <a href="/#support">자주 묻는 질문</a>
-        <a href="/#support">고객센터</a>
+        <a href={appPath('/guide')}>이용안내</a>
+        <a href={appPath('/#guide')}>거래 주의사항</a>
+        <a href={appPath('/#support')}>자주 묻는 질문</a>
+        <a href={appPath('/#support')}>고객센터</a>
       </nav>
 
       {/* 안내 및 저작권 */}

@@ -10,6 +10,7 @@ import {
   X,
 } from 'lucide-react';
 import { getPostOptions } from '../data/postOptions.js';
+import { appPath } from '../utils/paths.js';
 
 const tabs = ['전체', '양도', '교환', '분철'];
 
@@ -101,7 +102,7 @@ function PostCard({ post, onOpen }) {
 
       <a
         className="detail-button"
-        href={post.id != null ? `/post/${post.id}` : '#'}
+        href={post.id != null ? appPath(`/post/${post.id}`) : '#'}
         onClick={(event) => {
           if (post.id == null) {
             event.preventDefault();

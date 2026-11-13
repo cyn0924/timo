@@ -23,6 +23,7 @@ import {
   CURRENT_USER_ID
 } from '../data/postStore.js';
 import { getPostDetails } from '../data/postDetails.js';
+import { appPath } from '../utils/paths.js';
 import './TradeRequest.css';
 
 const days = ['일', '월', '화', '수', '목', '금', '토'];
@@ -149,7 +150,7 @@ export default function TradeRequest({ postId }) {
       <div className="request-page">
         <Header
           onPost={() => {
-            window.location.href = '/post/new';
+            window.location.href = appPath('/post/new');
           }}
         />
 
@@ -157,7 +158,7 @@ export default function TradeRequest({ postId }) {
           <section>
             <h1>거래글을 찾을 수 없습니다.</h1>
             <p>게시글이 삭제되었거나 주소가 올바르지 않습니다.</p>
-            <a href="/#market">목록으로 돌아가기</a>
+            <a href={appPath('/#market')}>목록으로 돌아가기</a>
           </section>
         </main>
 
@@ -234,7 +235,7 @@ export default function TradeRequest({ postId }) {
     <div className="request-page">
       <Header
         onPost={() => {
-          window.location.href = '/post/new';
+          window.location.href = appPath('/post/new');
         }}
       />
 
@@ -243,11 +244,11 @@ export default function TradeRequest({ postId }) {
 
         <nav className="detail-breadcrumb" aria-label="현재 위치">
           <House size={18} />
-          <a href="/">홈</a>
+          <a href={appPath('/')}>홈</a>
           <ChevronRight size={15} />
-          <a href={`/?date=${post.date}#market`}>티켓 거래</a>
+          <a href={appPath(`/?date=${post.date}#market`)}>티켓 거래</a>
           <ChevronRight size={15} />
-          <a href={`/post/${post.id}`}>게시글 상세 보기</a>
+          <a href={appPath(`/post/${post.id}`)}>게시글 상세 보기</a>
           <ChevronRight size={15} />
           <span>거래 요청</span>
         </nav>
@@ -328,7 +329,7 @@ export default function TradeRequest({ postId }) {
                   수령 방법 <b>{detail.methodLabel || post.method}</b>
                 </span>
 
-                <a href={`/post/${post.id}`}>
+                <a href={appPath(`/post/${post.id}`)}>
                   게시글 다시 보기 <ArrowRight size={13} />
                 </a>
               </div>
@@ -504,7 +505,7 @@ export default function TradeRequest({ postId }) {
                 거래 요청 보내기 <ArrowRight size={18} />
               </button>
 
-              <a className="detail-back-link" href={`/post/${post.id}`}>
+              <a className="detail-back-link" href={appPath(`/post/${post.id}`)}>
                 게시글로 돌아가기
               </a>
 
@@ -549,7 +550,7 @@ export default function TradeRequest({ postId }) {
               </ol>
             </section>
 
-            <a className="request-help-link" href="/#guide">
+            <a className="request-help-link" href={appPath('/#guide')}>
               <span>거래가 처음이신가요?</span>
               <b>
                 이용안내 <ArrowRight size={13} />
@@ -655,8 +656,8 @@ export default function TradeRequest({ postId }) {
             <b>현재 상태 · 판매자 확인 대기</b>
 
             <div>
-              <a href="/mypage">마이페이지에서 확인</a>
-              <a href={`/post/${post.id}`}>게시글로 돌아가기</a>
+              <a href={appPath('/mypage')}>마이페이지에서 확인</a>
+              <a href={appPath(`/post/${post.id}`)}>게시글로 돌아가기</a>
             </div>
           </section>
         </div>

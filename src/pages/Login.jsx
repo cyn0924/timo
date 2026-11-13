@@ -4,11 +4,12 @@ import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 import { useAuth } from '../context/AuthContext.jsx';
 import './Login.css';
+import { appPath } from '../utils/paths.js';
 
 function getReturnPath() {
   const requested = new URLSearchParams(window.location.search).get('returnTo');
-  if (!requested || !requested.startsWith('/') || requested.startsWith('//') || requested === '/login') return '/';
-  return requested;
+  if (!requested || !requested.startsWith('/') || requested.startsWith('//') || requested === '/login') return appPath('/');
+  return appPath(requested);
 }
 
 export default function Login() {
@@ -43,7 +44,7 @@ export default function Login() {
       <main className="login-main">
         <div className="login-decoration" aria-hidden="true" />
         <section className="login-card">
-          <a className="login-logo" href="/" aria-label="TIMO 홈">
+          <a className="login-logo" href={appPath('/')} aria-label="TIMO 홈">
             <img
               src={`${import.meta.env.BASE_URL}images/logo.png`}
               alt="TIMO"

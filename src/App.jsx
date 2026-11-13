@@ -15,6 +15,7 @@ import TradeRequest from './pages/TradeRequest.jsx';
 import Login from './pages/Login.jsx';
 import Guide from './pages/Guide.jsx';
 import { useAuth } from './context/AuthContext.jsx';
+import { appPath, routePathname } from './utils/paths.js';
 
 import { getPosts } from './data/postStore.js';
 
@@ -44,7 +45,7 @@ function HomePage() {
 
   // 게시글 작성 페이지 이동
   const notify = () => {
-    window.location.href = '/post/new';
+    window.location.href = appPath('/post/new');
   };
 
   // 거래 게시글 영역으로 이동
@@ -101,15 +102,14 @@ function HomePage() {
 export default function App() {
   const { user } = useAuth();
   // 마지막 슬래시 제거
-  const pathname =
-    window.location.pathname.replace(/\/+$/, '') || '/';
+  const pathname = routePathname();
 
   if (pathname === '/login') return <Login />;
   if (pathname === '/guide') return <Guide />;
 
   if ((pathname === '/mypage' || pathname === '/post/new') && !user) {
     const returnTo = `${pathname}${window.location.search}${window.location.hash}`;
-    window.location.replace(`/login?returnTo=${encodeURIComponent(returnTo)}`);
+    window.location.replace(appPath(`/login?returnTo=${encodeURIComponent(returnTo)}`));
     return null;
   }
 

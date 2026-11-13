@@ -21,6 +21,7 @@ import {
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 import { createPost } from '../data/postStore.js';
+import { appPath } from '../utils/paths.js';
 
 import './TradeCreate.css';
 
@@ -381,13 +382,13 @@ export default function TradeCreate() {
     if (dirty) {
       setDiscardOpen(true);
     } else {
-      window.location.href = '/#market';
+      window.location.href = appPath('/#market');
     }
   };
 
   const abandon = () => {
     setDiscardOpen(false);
-    window.location.href = '/#market';
+    window.location.href = appPath('/#market');
   };
 
   // 입력값 검증
@@ -651,7 +652,7 @@ export default function TradeCreate() {
       });
 
       window.alert('거래 게시글이 등록되었습니다.');
-      window.location.href = `/post/${stored.id}`;
+      window.location.href = appPath(`/post/${stored.id}`);
     } catch (error) {
       console.error(error);
 
@@ -667,7 +668,7 @@ export default function TradeCreate() {
     <div className="trade-create-page">
       <Header
         onPost={() => {
-          window.location.href = '/post/new';
+          window.location.href = appPath('/post/new');
         }}
       />
 
@@ -677,11 +678,11 @@ export default function TradeCreate() {
         <nav aria-label="현재 위치">
           <House size={19} />
 
-          <a href="/">홈</a>
+          <a href={appPath('/')}>홈</a>
 
           <ChevronRight size={16} />
 
-          <a href="/#market">티켓 거래</a>
+          <a href={appPath('/#market')}>티켓 거래</a>
 
           <ChevronRight size={16} />
 

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TIMO 페이지 이동 중</title>
+    <script>
+      (() => {
+        const base = '/timo/';
+        const currentPath = window.location.pathname;
+        const relativePath = currentPath.startsWith(base)
+          ? currentPath.slice(base.length)
+          : currentPath.replace(/^\/+/, '');
+        const route = `/${relativePath}${window.location.search}${window.location.hash}`;
+        window.location.replace(`${base}?__spa_path=${encodeURIComponent(route)}`);
+      })();
+    </script>
+  </head>
+  <body>
+    <p>요청하신 TIMO 페이지로 이동하고 있습니다.</p>
+    <a href="/timo/">메인 페이지로 이동</a>
+  </body>
+</html>
